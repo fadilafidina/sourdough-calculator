@@ -176,7 +176,7 @@ export class App extends Component {
                 <hr></hr>
 
                 <h1>
-                    Your details
+                    Your details are displayed below.
                 </h1>
                 <p>
                     First name: {this.state.firstName}

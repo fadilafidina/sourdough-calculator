@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/18d3f67b-1122-4069-b4a6-f507564edf51/deploy-status)](https://app.netlify.com/sites/airline-form/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
