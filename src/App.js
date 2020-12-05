@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import ingredient from './Ingredient'
 
 export class App extends Component {
     constructor() {
@@ -10,6 +11,14 @@ export class App extends Component {
             levain: '',
             water: '',
             salt: '',
+            ingredients: {
+                totalFlour: '',
+                breadFlour: '',
+                wwFlour: '',
+                levain: '',
+                water: '',
+                salt: '',
+            },
             ratios: {
                 totalFlour: 1,
                 breadFlour: 0.8,
@@ -17,21 +26,16 @@ export class App extends Component {
                 levain: 0.2,
                 water: 0.7,
                 salt: 0.02,
-            },
-            dietaryRequirements: {
-                isHalal: false,
-                isVegetarian: false,
-            },
+            }
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.getDietStrings = this.getDietStrings.bind(this);
         this.getTotalMass = this.getTotalMass.bind(this);
     }
 
     handleChange(event) {
-
-        const { name, type, value, checked } = event.target;
+        const { name, value } = event.target;
+        // const { name, type, value, checked } = event.target;
 
         console.log(`name: ${name}, value: ${value}`)
         name === 'totalFlour'
@@ -55,8 +59,6 @@ export class App extends Component {
                 })
                 : name === 'wwFlour'
                     ? this.setState({
-                        // [name]: value,
-                        // [name]: this.state.totalFlour * this.state.ratios[name],
                         totalFlour: value,
                         breadFlour: value * 0.8,
                         wwFlour: value * 0.2,
@@ -68,32 +70,19 @@ export class App extends Component {
     };
 
     handleSubmit(event) {
-        alert(`
-        First Name: ${this.state.firstName}
-        Last Name: ${this.state.lastName}
-        Age: ${this.state.age}
-        Gender: ${this.state.gender}
-        Dietary requirements: ${this.getDietStrings()}
-        `)
+        // alert(`
+        // Congratulations on your bread. Good luck baking.
+        // `)
+
+        this.setState({
+            totalFlour: 0,
+            breadFlour: 0,
+            wwFlour: 0,
+            levain: 0,
+            water: 0,
+            salt: 0,
+        })
     };
-
-    getDietStrings() {
-
-        let dietStrings = [];
-
-        const halalString = 'Halal';
-        const vegetarianString = 'Vegetarian';
-
-        if (this.state.dietaryRequirements.isHalal) {
-            dietStrings.push(halalString)
-        }
-        if (this.state.dietaryRequirements.isVegetarian) {
-            dietStrings.push(vegetarianString)
-        }
-
-        return dietStrings;
-
-    }
 
     getTotalMass() {
         let total = +this.state.totalFlour +
@@ -104,9 +93,14 @@ export class App extends Component {
     }
 
     render() {
+        // const todoComponents = this.state.ingredients.map(
+        //     todo => <ingredient amount={todo} text={todo.text} completed={todo.completed} onChange={this.handleChange} />);
+
+
         return (
             <div>
                 <form>
+
                     Total flour:
                     <input
                         name='totalFlour'
@@ -155,6 +149,8 @@ export class App extends Component {
 
                     Total mass: {this.getTotalMass()}
                     <br />
+
+                    <button onClick={this.handleSubmit}>I am a button. Click me to reset.</button>
                 </form>
 
                 <hr></hr>
@@ -163,3 +159,5 @@ export class App extends Component {
     }
 }
 export default App;
+
+
