@@ -1,26 +1,35 @@
 import React from 'react';
+import { PropTypes } from 'react'
 
-export function Ingredient(props) {
+// export default function Ingredient(props) {
 
-    const completedStyle = {
-        fontStyle: "italic",
-        color: "#cdcdcd",
-        textDecoration: "line-through"
-    };
+// const completedStyle = {
+//     fontStyle: "italic",
+//     color: "#cdcdcd",
+//     textDecoration: "line-through"
+// };
+export default class Ingredient extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log("props from childp", props);
+        // this.handleChangeTwo = this.handleChangeTwo.bind(this);
+    }
 
-    return (
-        <div>
-            {props.label}:
-            <input
-                name='salt'
-                value={this.state.salt === 0 ? '' : this.state.salt}
-                type='text'
-                placeholder='Salt'
-                onChange={this.handleChange}>
-            </input>
-            <br />
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                {this.props.label}:
+                <input
+                    name={this.props.text}
+                    value={this.props.amount === 0 ? '' : this.props.amount}
+                    type='text'
+                    placeholder={this.props.label}
+                    onChange={() => this.props.handleChange()}>
+                </input>
+                <br />
+            </div>
+        )
+    }
 
     // return (<div className="todo-item">
     //     <input type="checkbox" checked={props.completed} onChange={() => props.onChange(props.id)}></input>

@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
-// import ingredient from './Ingredient'
+import ingredientData from './data/ingredientData';
+import Ingredient from './Ingredient'
+import ResetButton from './ResetButton'
 
 export class App extends Component {
     constructor() {
         super();
         this.state = {
-            totalFlour: '',
-            breadFlour: '',
-            wwFlour: '',
-            levain: '',
-            water: '',
-            salt: '',
-            ingredients: {
-                totalFlour: '',
-                breadFlour: '',
-                wwFlour: '',
-                levain: '',
-                water: '',
-                salt: '',
-            },
+            // totalFlour: '',
+            // breadFlour: '',
+            // wwFlour: '',
+            // levain: '',
+            // water: '',
+            // salt: '',
+            ingredientData: ingredientData,
             ratios: {
                 totalFlour: 1,
                 breadFlour: 0.8,
@@ -29,50 +24,85 @@ export class App extends Component {
             }
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleChangeTwo = this.handleChangeTwo.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.getTotalMass = this.getTotalMass.bind(this);
     }
 
-    handleChange(event) {
-        const { name, value } = event.target;
+    handleChangeTwo() {
+        console.log('it got passed thru');
+    }
+
+    // handleChange(name, value) {
+    handleChange(event, id) {
+        const { value } = event.target;
         // const { name, type, value, checked } = event.target;
 
-        console.log(`name: ${name}, value: ${value}`)
-        name === 'totalFlour'
-            ? this.setState({
-                totalFlour: value,
-                breadFlour: value / this.state.ratios[name] * this.state.ratios.breadFlour,
-                wwFlour: value / this.state.ratios[name] * this.state.ratios.wwFlour,
-                levain: value / this.state.ratios[name] * this.state.ratios.levain,
-                water: value / this.state.ratios[name] * this.state.ratios.water,
-                salt: value / this.state.ratios[name] * this.state.ratios.salt,
-            })
-            : name === 'breadFlour'
-                ? this.setState({
-                    totalFlour: value / this.state.ratios.breadFlour * this.state.ratios.totalFlour,
-                    breadFlour: value,
-                    wwFlour: value / this.state.ratios.breadFlour * this.state.ratios.wwFlour,
-                    levain: value / this.state.ratios.breadFlour * this.state.ratios.levain,
-                    water: value / this.state.ratios.breadFlour * this.state.ratios.water,
-                    salt: value / this.state.ratios.breadFlour * this.state.ratios.salt,
+        // console.log(`name: ${name}, value: ${value}`)
+        // console.log(`EVENT: ${event.type}`)
 
-                })
-                : name === 'wwFlour'
-                    ? this.setState({
-                        totalFlour: value,
-                        breadFlour: value * 0.8,
-                        wwFlour: value * 0.2,
-                        levain: value * 0.2,
-                        water: value * 0.7,
-                        salt: value * 0.02,
-                    }) : console.log(this.state);
+
+        // name === 'totalFlour'
+        //     ? 
+
+        // stick with using total flour first
+        // this.setState({
+        //     ingredientData: {
+        //         totalFlour: {
+        //             amount: value
+        //         },
+        //         breadFlour: {
+        //             amount: value / this.state.ratios[name] * this.state.ratios.breadFlour
+        //         },
+        //         wwFlour: {
+        //             amount: value / this.state.ratios[name] * this.state.ratios.wwFlour
+        //         },
+        //         levain: {
+        //             amount: value / this.state.ratios[name] * this.state.ratios.levain
+        //         },
+        //         water: {
+        //             amount: value / this.state.ratios[name] * this.state.ratios.water
+        //         },
+        //         salt: {
+        //             amount: value / this.state.ratios[name] * this.state.ratios.salt
+        //         },
+        //     }
+        // })
+        // : name === 'breadFlour'
+        //     ? this.setState({
+        //         ingredientData: {
+        //             totalFlour: value / this.state.ratios.breadFlour * this.state.ratios.totalFlour,
+        //             breadFlour: value,
+        //             wwFlour: value / this.state.ratios.breadFlour * this.state.ratios.wwFlour,
+        //             levain: value / this.state.ratios.breadFlour * this.state.ratios.levain,
+        //             water: value / this.state.ratios.breadFlour * this.state.ratios.water,
+        //             salt: value / this.state.ratios.breadFlour * this.state.ratios.salt,
+        //         }
+        //     })
+        //     : console.log(this.state);
+
+
+        this.setState(prevState => {
+            //make new array first
+            const updatedIngredients = prevState.ingredientData.map(i => {
+                if (i.id === id) {
+                    i.amount = value / i.ratios['totalFlour'] * i.ratios[i.text]
+                }
+                return i;
+            });
+
+            // set the new state to the new todos with the updated state
+            return {
+                ingredientData: updatedIngredients,
+            }
+        })
+        console.log("Changed", id);
         console.log(this.state);
     };
 
-    handleSubmit(event) {
-        // alert(`
-        // Congratulations on your bread. Good luck baking.
-        // `)
+    handleSubmit() {
+        console.log("you POTATO")
+
 
         this.setState({
             totalFlour: 0,
@@ -95,66 +125,91 @@ export class App extends Component {
     render() {
         // const todoComponents = this.state.ingredients.map(
         //     todo => <ingredient amount={todo} text={todo.text} completed={todo.completed} onChange={this.handleChange} />);
+        const ingredientComponents = this.state.ingredientData.map(i =>
+            <Ingredient amount={i.amount} label={i.label} ratio={i.ratio} text={i.text} onChange={this.handleSubmit}>
+            </Ingredient>
+        )
 
+        // const dict = this.state.ingredientData;
+        // let components = [];
+        // let component;
+        // for (var i in dict) {
+        //     component = <Ingredient amount={dict[i].amount}
+        //         text={dict[i].text}
+        //         label={dict[i].label}
+        //         ratio={dict[i].ratio}
+        //         onChange={this.handleChange} >
+        //     </Ingredient>
+        //     components.push(component);
+        // }
 
         return (
             <div>
                 <form>
 
+                    {ingredientComponents}
+
+
+Below are the hardcoded boxes <br />
+                    {/* 
                     Total flour:
-                    <input
+                <input
                         name='totalFlour'
-                        value={this.state.totalFlour === 0 ? '' : this.state.totalFlour}
+                        value={this.state.ingredientData.totalFlour.amount === 0 ? '' : this.state.ingredientData.totalFlour.amount}
                         type='text'
                         placeholder='Total Flour'
                         onChange={this.handleChange}>
                     </input>
                     <br />
                     Bread flour:
-                    <input
+                <input
                         name='breadFlour'
-                        value={this.state.breadFlour === 0 ? '' : this.state.breadFlour}
+                        value={this.state.ingredientData.breadFlour.amount === 0 ? '' : this.state.ingredientData.breadFlour.amount}
                         type='text'
                         placeholder='Bread Flour'
                         onChange={this.handleChange}>
                     </input>
                     <br />
                     WW flour:
-                    <input
+                <input
                         name='wwFlour'
-                        value={this.state.wwFlour === 0 ? '' : this.state.wwFlour}
+                        value={this.state.ingredientData.wwFlour.amount === 0 ? '' : this.state.ingredientData.wwFlour.amount}
                         type='text'
                         placeholder='Whole wheat flour'
                         onChange={this.handleChange}>
                     </input>
                     <br />
                     Levain:
-                    <input
+                <input
                         name='levain'
-                        value={this.state.levain === 0 ? '' : this.state.levain}
+                        value={this.state.ingredientData.levain.amount === 0 ? '' : this.state.ingredientData.levain.amount}
                         type='text'
                         placeholder='Levain'
                         onChange={this.handleChange}>
                     </input>
                     <br />
                     Salt:
-                    <input
+                <input
                         name='salt'
-                        value={this.state.salt === 0 ? '' : this.state.salt}
+                        value={this.state.ingredientData.salt.amount === 0 ? '' : this.state.ingredientData.salt.amount}
                         type='text'
                         placeholder='Salt'
                         onChange={this.handleChange}>
-                    </input>
+                    </input> */}
                     <br />
 
                     Total mass: {this.getTotalMass()}
                     <br />
 
-                    <button onClick={this.handleSubmit}>I am a button. Click me to reset.</button>
-                </form>
+                    <button onClick={this.handleSubmit}>
+                        <p>
+                            I am a button. Click me to reset.
+                        </p>
+                    </button>
 
-                <hr></hr>
-            </div>
+                    <ResetButton onClick={this.handleSubmit}></ResetButton>
+                </form>
+            </div >
         )
     }
 }

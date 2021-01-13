@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: whitesmoke;
+  width: 30%;
+  font-size: 30 px;
 }
 
 code {
@@ -62,16 +64,15 @@ input {
 /* Coz I'm too lazy for css https://codepen.io/rickyeckhardt/pen/poJwRRb */
 
 button {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   line-height: 2 rem;
   padding: 0 20px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   transition: 0.2s all ease-in-out;
   outline: none;
-  border: 1px solid rgba(0, 0, 0, 1);
-  box-shadow: 3px 3px 1px $form-primary-highlight,
-    3px 3px 1px 1px rgba(0, 0, 0, 1);
+  border: 1px solid rgb(219, 186, 186);
+  box-shadow: 3px 3px 1px 3px 3px 1px 1px rgba(0, 0, 0, 1);
 }
 
 input {
@@ -81,7 +82,7 @@ input {
   margin-bottom: 2 rem;
   margin-left: 40 px;
   border: none;
-  border-bottom: 5px solid rgb(219, 186, 186);
+  border-bottom: 2px solid rgb(219, 186, 186);
   min-width: 250px;
   padding-left: 5px;
   outline: none;
