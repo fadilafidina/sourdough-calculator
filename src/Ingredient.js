@@ -1,19 +1,25 @@
 import React from 'react';
-import { PropTypes } from 'react'
 
 // export default function Ingredient(props) {
 
-// const completedStyle = {
-//     fontStyle: "italic",
-//     color: "#cdcdcd",
-//     textDecoration: "line-through"
-// };
+//     const completedStyle = {
+//         fontStyle: "italic",
+//         color: "#cdcdcd",
+//         textDecoration: "line-through"
+//     };
 export default class Ingredient extends React.Component {
     constructor(props) {
         super(props);
-        console.log("props from childp", props);
-        // this.handleChangeTwo = this.handleChangeTwo.bind(this);
+        console.log("props from child!!!!!!!!!!!!!", props);
+        this.randomFunc = this.randomFunc.bind(this);
     }
+
+    randomFunc() {
+        this.props.handleChangeTwo();
+        console.log("randomFunc");
+    }
+
+
 
     render() {
         return (
@@ -24,10 +30,10 @@ export default class Ingredient extends React.Component {
                     value={this.props.amount === 0 ? '' : this.props.amount}
                     type='text'
                     placeholder={this.props.label}
-                    onChange={() => this.props.handleChange()}>
+                    onChange={() => this.props.handleChangeTwo(this.props.id)}>
                 </input>
                 <br />
-            </div>
+            </div >
         )
     }
 

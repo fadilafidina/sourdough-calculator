@@ -29,8 +29,8 @@ export class App extends Component {
         this.getTotalMass = this.getTotalMass.bind(this);
     }
 
-    handleChangeTwo() {
-        console.log('it got passed thru');
+    handleChangeTwo(id) {
+        console.log('it got passed thru ', id);
     }
 
     // handleChange(name, value) {
@@ -126,7 +126,13 @@ export class App extends Component {
         // const todoComponents = this.state.ingredients.map(
         //     todo => <ingredient amount={todo} text={todo.text} completed={todo.completed} onChange={this.handleChange} />);
         const ingredientComponents = this.state.ingredientData.map(i =>
-            <Ingredient amount={i.amount} label={i.label} ratio={i.ratio} text={i.text} onChange={this.handleSubmit}>
+            <Ingredient
+                id={i.id}
+                amount={i.amount}
+                label={i.label}
+                ratio={i.ratio}
+                text={i.text}
+                handleChangeTwo={this.handleChangeTwo}>
             </Ingredient>
         )
 
