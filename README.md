@@ -12,6 +12,7 @@ And set up a lil trello board. I like breaking my work into smaller chunks: http
 
 The "live" version is hosted on Netlify: https://sourdghcalc.netlify.app/
 
+For some pics of my sourdough: https://www.instagram.com/matchadou/
 
 ------
 
