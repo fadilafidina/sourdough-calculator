@@ -24,13 +24,17 @@ export default class Ingredient extends React.Component {
     render() {
         return (
             <div>
-                {this.props.label}:
+                {this.props.label}
+                <br />
+            Percentage: {`${this.props.ratio * 100} %`}
+                <br />
+
                 <input
                     name={this.props.text}
                     value={this.props.amount === 0 ? '' : this.props.amount}
                     type='text'
                     placeholder={this.props.label}
-                    onChange={() => this.props.handleChangeTwo(this.props.id)}>
+                    onChange={(e) => this.props.handleChange(e, this.props.id)}>
                 </input>
                 <br />
             </div >

@@ -3,6 +3,15 @@ import ingredientData from './data/ingredientData';
 import Ingredient from './Ingredient'
 import ResetButton from './ResetButton'
 
+const ratios = {
+    totalFlour: 1,
+    breadFlour: 0.8,
+    wwFlour: 0.2,
+    levain: 0.2,
+    water: 0.7,
+    salt: 0.02,
+};
+
 export class App extends Component {
     constructor() {
         super();
@@ -35,63 +44,26 @@ export class App extends Component {
 
     // handleChange(name, value) {
     handleChange(event, id) {
-        const { value } = event.target;
+        const { name, value } = event.target;
         // const { name, type, value, checked } = event.target;
 
-        // console.log(`name: ${name}, value: ${value}`)
-        // console.log(`EVENT: ${event.type}`)
+        console.log(`name: ${name}, value: ${value}`)
 
-
-        // name === 'totalFlour'
-        //     ? 
-
-        // stick with using total flour first
-        // this.setState({
-        //     ingredientData: {
-        //         totalFlour: {
-        //             amount: value
-        //         },
-        //         breadFlour: {
-        //             amount: value / this.state.ratios[name] * this.state.ratios.breadFlour
-        //         },
-        //         wwFlour: {
-        //             amount: value / this.state.ratios[name] * this.state.ratios.wwFlour
-        //         },
-        //         levain: {
-        //             amount: value / this.state.ratios[name] * this.state.ratios.levain
-        //         },
-        //         water: {
-        //             amount: value / this.state.ratios[name] * this.state.ratios.water
-        //         },
-        //         salt: {
-        //             amount: value / this.state.ratios[name] * this.state.ratios.salt
-        //         },
-        //     }
-        // })
-        // : name === 'breadFlour'
-        //     ? this.setState({
-        //         ingredientData: {
-        //             totalFlour: value / this.state.ratios.breadFlour * this.state.ratios.totalFlour,
-        //             breadFlour: value,
-        //             wwFlour: value / this.state.ratios.breadFlour * this.state.ratios.wwFlour,
-        //             levain: value / this.state.ratios.breadFlour * this.state.ratios.levain,
-        //             water: value / this.state.ratios.breadFlour * this.state.ratios.water,
-        //             salt: value / this.state.ratios.breadFlour * this.state.ratios.salt,
-        //         }
-        //     })
-        //     : console.log(this.state);
-
+        const ingredientAmountChanged = value;
 
         this.setState(prevState => {
             //make new array first
             const updatedIngredients = prevState.ingredientData.map(i => {
-                if (i.id === id) {
-                    i.amount = value / i.ratios['totalFlour'] * i.ratios[i.text]
-                }
+                // if (i.id === id) {
+                //     i.amount = value / prevState.ratios['totalFlour'] * prevState.ratios[i.text]
+
+                // }
+
+                i.amount = ingredientAmountChanged / ratios.totalFlour * i.ratio;
                 return i;
             });
 
-            // set the new state to the new todos with the updated state
+            //     // set the new state to the new todos with the updated state
             return {
                 ingredientData: updatedIngredients,
             }
@@ -132,7 +104,7 @@ export class App extends Component {
                 label={i.label}
                 ratio={i.ratio}
                 text={i.text}
-                handleChangeTwo={this.handleChangeTwo}>
+                handleChange={this.handleChange}>
             </Ingredient>
         )
 

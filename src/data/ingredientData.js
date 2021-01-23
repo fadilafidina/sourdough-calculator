@@ -38,7 +38,7 @@ const ingredientData = [
         id: 6,
         text: 'salt',
         label: 'Salt',
-        ratio: 0.8,
+        ratio: 0.02,
         amount: ''
     }
 ]
