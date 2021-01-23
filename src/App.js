@@ -42,7 +42,6 @@ export class App extends Component {
         console.log('it got passed thru ', id);
     }
 
-    // handleChange(name, value) {
     handleChange(event, id) {
         const { name, value } = event.target;
         // const { name, type, value, checked } = event.target;
@@ -56,14 +55,13 @@ export class App extends Component {
             const updatedIngredients = prevState.ingredientData.map(i => {
                 // if (i.id === id) {
                 //     i.amount = value / prevState.ratios['totalFlour'] * prevState.ratios[i.text]
-
                 // }
 
-                i.amount = ingredientAmountChanged / ratios.totalFlour * i.ratio;
+                i.amount = ingredientAmountChanged / ratios[name] * i.ratio;
                 return i;
             });
 
-            //     // set the new state to the new todos with the updated state
+            // set the new state to the new ingredients with the updated state
             return {
                 ingredientData: updatedIngredients,
             }
@@ -74,7 +72,6 @@ export class App extends Component {
 
     handleSubmit() {
         console.log("you POTATO")
-
 
         this.setState({
             totalFlour: 0,
@@ -87,10 +84,10 @@ export class App extends Component {
     };
 
     getTotalMass() {
-        let total = +this.state.totalFlour +
-            +this.state.levain +
-            +this.state.salt +
-            +this.state.water;
+        let total = this.state.totalFlour
+            + this.state.levain
+            + this.state.salt
+            + this.state.water;
         return total || 0;
     }
 
@@ -179,13 +176,7 @@ Below are the hardcoded boxes <br />
                     Total mass: {this.getTotalMass()}
                     <br />
 
-                    <button onClick={this.handleSubmit}>
-                        <p>
-                            I am a button. Click me to reset.
-                        </p>
-                    </button>
-
-                    <ResetButton onClick={this.handleSubmit}></ResetButton>
+                    <ResetButton handleSubmit={this.handleSubmit}></ResetButton>
                 </form>
             </div >
         )

@@ -11,15 +11,7 @@ export default class Ingredient extends React.Component {
     constructor(props) {
         super(props);
         console.log("props from child!!!!!!!!!!!!!", props);
-        this.randomFunc = this.randomFunc.bind(this);
     }
-
-    randomFunc() {
-        this.props.handleChangeTwo();
-        console.log("randomFunc");
-    }
-
-
 
     render() {
         return (
