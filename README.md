@@ -1,5 +1,22 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/18d3f67b-1122-4069-b4a6-f507564edf51/deploy-status)](https://app.netlify.com/sites/airline-form/deploys)
 
+# Hi!
+
+I started making my own sourdough bread and wanted to practice some beginner react in my spare time. And also get used to javascript.
+
+So the first thing I'm making is a simple sourdough calculator app.
+
+I did some research on some popular sourdough ratios out there: https://docs.google.com/spreadsheets/d/1arQHlimoQ7mk31QW3pKOMuSh2wwqXMCLChit9JuMpEM/edit?usp=sharing
+
+And set up a lil trello board. I like breaking my work into smaller chunks: https://trello.com/b/RKfL2fQM/bread-calc
+
+The "live" version is hosted on Netlify: https://sourdghcalc.netlify.app/
+
+
+------
+
+The default readme in case I forget the scripts that I can run.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
