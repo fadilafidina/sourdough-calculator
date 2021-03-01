@@ -146,7 +146,10 @@ export class App extends Component {
 
         return (
             <div>
-                <form>
+                <div class="header">
+                    This is a bread calculator..
+                </div>
+                <form class="body">
 
                     {ingredientComponents}
 
@@ -160,5 +163,3 @@ export class App extends Component {
     }
 }
 export default App;
-
-

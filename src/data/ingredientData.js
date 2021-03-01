@@ -16,7 +16,7 @@ const ingredientData = [
     {
         id: 3,
         text: 'wwFlour',
-        label: 'Whole-wheat flour',
+        label: 'WW flour',
         ratio: 0.2,
         amount: ''
     },
