@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Jumbotron } from 'react-bootstrap';
 import ingredientData from './data/ingredientData';
 import Ingredient from './Ingredient'
 import ResetButton from './ResetButton'
@@ -145,20 +146,26 @@ export class App extends Component {
         );
 
         return (
-            <div>
-                <div class="header">
-                    This is a bread calculator..
-                </div>
-                <form class="body">
+            <Container>
+                <Jumbotron>
+                    This is header!
+                </Jumbotron>
+                <div>
 
-                    {ingredientComponents}
+                    <div class="header">
+                        This is a bread calculator..
+                </div>
+                    <form class="body">
+
+                        {ingredientComponents}
 
                     Total mass: {this.getTotalMass()}
-                    <br />
+                        <br />
 
-                    <ResetButton handleSubmit={this.handleSubmit}></ResetButton>
-                </form>
-            </div >
+                        <ResetButton handleSubmit={this.handleSubmit}></ResetButton>
+                    </form>
+                </div >
+            </Container>
         );
     }
 }
