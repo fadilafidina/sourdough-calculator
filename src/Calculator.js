@@ -12,7 +12,6 @@ const ratios = {
     salt: 0.02,
 };
 
-
 function Calculator() {
     const [ingredientData, setIngredientsData] = useState(IngredientData)
 
