@@ -38,7 +38,7 @@ function Calculator() {
                 ratioChanged = value / 100;
                 i.ratio = ratioChanged;
                 // new amount = totalFlour * new ratio!
-                i.amount = ingredientData.ingredientData[0].amount * ratioChanged;
+                i.amount = ingredientData[0].amount * ratioChanged;
 
                 console.log('ratioChanged', ratioChanged)
                 console.log('i.amount', i.amount)
