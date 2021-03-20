@@ -24,7 +24,6 @@ export default class Ingredient extends React.Component {
 
                     <div class="label">
                         {this.props.label}
-
                     </div>
 
                     <input

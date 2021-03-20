@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Jumbotron } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import ingredientData from './data/ingredientData';
 import Ingredient from './Ingredient'
 import ResetButton from './ResetButton'
+import Header from './Header'
 
 const ratios = {
     totalFlour: 1,
@@ -80,19 +81,8 @@ export class App extends Component {
         this.setState(prevState => {
             //make new array first
             const updatedIngredients = prevState.ingredientData.map(i => {
-                // if (i.id === id) {
-                //     i.amount = value / prevState.ratios['totalFlour'] * prevState.ratios[i.text]
-                // }
-                // if the thing that changed was ratio, then update the ratio
-
-                // this value is still in hundreds. needs to change to 0..
-                // new amount = current amount / existing ratio * new ratio
                 if (i.id === id) {
                     ratioChanged = value / 100;
-                    // console.log('ratioChanged', ratioChanged)
-                    // console.log('i.amount', i.amount)
-                    // console.log('i.ratio * 100', i.ratio * 100)
-                    // i.amount = i.amount / (i.ratio * 100) * 100 * ratioChanged;
                     i.ratio = ratioChanged;
                     // new amount = totalFlour * new ratio!
                     i.amount = prevState.ingredientData[0].amount * ratioChanged;
@@ -100,13 +90,11 @@ export class App extends Component {
                     console.log('ratioChanged', ratioChanged)
                     console.log('i.amount', i.amount)
                     console.log('i.ratio', i.ratio)
-
                     return i;
                 }
                 return i;
             });
 
-            // set the new state to the new ingredients with the updated state
             return {
                 ingredientData: updatedIngredients,
             }
@@ -130,8 +118,6 @@ export class App extends Component {
     }
 
     render() {
-        // const todoComponents = this.state.ingredients.map(
-        //     todo => <ingredient amount={todo} text={todo.text} completed={todo.completed} onChange={this.handleChange} />);
         const ingredientComponents = this.state.ingredientData.map(i =>
             <Ingredient
                 id={i.id}
@@ -147,21 +133,13 @@ export class App extends Component {
 
         return (
             <Container>
-                <Jumbotron>
-                    This is header!
-                </Jumbotron>
+                <Header />
                 <div>
-
-                    <div class="header">
-                        This is a bread calculator..
-                </div>
                     <form class="body">
 
                         {ingredientComponents}
-
-                    Total mass: {this.getTotalMass()}
+                        Total mass: {this.getTotalMass()}
                         <br />
-
                         <ResetButton handleSubmit={this.handleSubmit}></ResetButton>
                     </form>
                 </div >
