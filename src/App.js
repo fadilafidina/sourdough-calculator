@@ -5,7 +5,7 @@ import Calculator from './Calculator';
 
 function App() {
     return (
-        <Container>
+        <Container class="container">
             <Header />
             <Calculator />
         </Container>

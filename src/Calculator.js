@@ -39,10 +39,6 @@ function Calculator() {
                 i.ratio = ratioChanged;
                 // new amount = totalFlour * new ratio!
                 i.amount = ingredientData[0].amount * ratioChanged;
-
-                console.log('ratioChanged', ratioChanged)
-                console.log('i.amount', i.amount)
-                console.log('i.ratio', i.ratio)
                 return i;
             }
             return i;
@@ -82,6 +78,7 @@ function Calculator() {
         <div>
             <form class="body">
                 {ingredientComponents}
+
                         Total mass: {getTotalMass()}
                 <br />
                 <ResetButton handleSubmit={handleSubmit}></ResetButton>
