@@ -1,12 +1,5 @@
 import React from 'react';
 
-// export default function Ingredient(props) {
-
-//     const completedStyle = {
-//         fontStyle: "italic",
-//         color: "#cdcdcd",
-//         textDecoration: "line-through"
-//     };
 export default class Ingredient extends React.Component {
     constructor(props) {
         super(props);
@@ -18,8 +11,6 @@ export default class Ingredient extends React.Component {
 
         return (
             <div class="pair">
-
-
                 <div class="left">
 
                     <div class="label">
@@ -52,9 +43,4 @@ export default class Ingredient extends React.Component {
             </div >
         )
     }
-
-    // return (<div className="todo-item">
-    //     <input type="checkbox" checked={props.completed} onChange={() => props.onChange(props.id)}></input>
-    //     <label style={props.completed ? completedStyle : null}>{props.text}</label> <br />
-    // </div>);
 }
