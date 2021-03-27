@@ -8,12 +8,13 @@ export default class ResetButton extends React.Component {
 
     render() {
         return (
-
-            <button onClick={() => this.props.handleSubmit()}>
-                <p class="buttonText">
-                    Reset data
+            <div class='resetButton'>
+                <button onClick={() => this.props.handleSubmit()}>
+                    <p class="buttonText">
+                        Reset data
                 </p>
-            </button>
+                </button>
+            </div>
         )
     }
 }

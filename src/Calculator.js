@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Ingredient from './Ingredient'
 import ResetButton from './ResetButton';
 import IngredientData from './data/ingredientData'
+import TotalMass from './TotalMass'
 
 const ratios = {
     totalFlour: 1,
@@ -51,16 +52,6 @@ function Calculator() {
         setIngredientsData(IngredientData);
     });
 
-    const getTotalMass = () => {
-        let total = 0;
-        ingredientData.forEach(ingredient => {
-            if (ingredient.id !== 1) {
-                total += ingredient.amount
-            }
-        });
-        return total;
-    };
-
     const ingredientComponents = ingredientData.map(i =>
         <Ingredient
             id={i.id}
@@ -79,8 +70,10 @@ function Calculator() {
             <form class="body">
                 {ingredientComponents}
 
-                        Total mass: {getTotalMass()}
+                <TotalMass ingredientData={ingredientData}></TotalMass>
+
                 <br />
+
                 <ResetButton handleSubmit={handleSubmit}></ResetButton>
             </form>
         </div >
