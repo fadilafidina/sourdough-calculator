@@ -3,8 +3,9 @@ import React from 'react'
 export default function Footer() {
     return (
         <div class='footer'>
-            Made with <span role="img" aria-label="revolving hearts">💞</span> by dila.
-
+            <p class='footerText'>
+                Made with <span role="img" aria-label="revolving hearts">💞</span> by <a href='https://github.com/fadilafidina'>dila</a>.
+            </p>
         </div>
-    )
+    );
 }

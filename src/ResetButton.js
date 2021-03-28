@@ -15,6 +15,6 @@ export default class ResetButton extends React.Component {
                 </p>
                 </button>
             </div>
-        )
-    }
+        );
+    };
 }

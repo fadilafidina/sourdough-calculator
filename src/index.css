@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: rgb(253, 245, 245);
   width: 100%;
   font-size: 30 px;
@@ -28,10 +28,11 @@ button {
   outline: none;
   border: none;
   background-color: rgb(177, 137, 144);
+  border-radius: 0.2rem;
 }
 
 .buttonText {
-  color: whitesmoke;
+  color: white;
   size: 30px;
 }
 
@@ -77,8 +78,16 @@ input {
   height: 2.5rem;
   font-size: 0.8rem;
   margin: auto;
-  /* border: 5px solid #ffff00; */
   padding: 10px;
   text-align: center;
   vertical-align: middle;
+}
+
+.footerText {
+  color: grey;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(177, 137, 144);
 }

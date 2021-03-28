@@ -77,7 +77,7 @@ function Calculator() {
                 <ResetButton handleSubmit={handleSubmit}></ResetButton>
             </form>
         </div >
-    )
+    );
 }
 
 export default Calculator;

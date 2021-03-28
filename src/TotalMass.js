@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function TotalMass(props) {
 
@@ -16,7 +16,7 @@ function TotalMass(props) {
         <div class='totalMass'>
             Total mass: {getTotalMass(props.ingredientData)} grams
         </div>
-    )
+    );
 }
 
-export default TotalMass
+export default TotalMass;
