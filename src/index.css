@@ -7,14 +7,9 @@ body {
   font-size: 30 px;
 }
 
-ol {
-  background-color: yellow;
-}
-
 .container {
   margin: auto;
   width: 40%;
-  /* border: 5px solid #ffff00; */
   padding: 10px;
 }
 
