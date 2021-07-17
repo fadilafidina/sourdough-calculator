@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Ingredient from './Ingredient'
 import ResetButton from './ResetButton';
 import IngredientData from './data/ingredientData'
@@ -14,7 +14,17 @@ const ratios = {
 };
 
 function Calculator() {
-    const [ingredientData, setIngredientsData] = useState(IngredientData)
+    const [ingredientData, setIngredientsData] = useState(IngredientData);
+
+    const [hasReset, setHasReset] = useState(false);
+
+    // we want this pop up to pop up when we click reset just to practice using hooks :)
+    useEffect(() => {
+        if (hasReset) {
+            window.alert('this is some alert. go get making bread');
+            setHasReset(false);
+        }
+    }, [hasReset]);
 
     const handleChange = ((event, id) => {
         const { name, value } = event.target;
@@ -49,7 +59,8 @@ function Calculator() {
     });
 
     const handleSubmit = (() => {
-        setIngredientsData(IngredientData);
+        setIngredientsData(IngredientData); // resets it to the original
+        setHasReset(true);
     });
 
     const ingredientComponents = ingredientData.map(i =>
