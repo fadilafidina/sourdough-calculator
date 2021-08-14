@@ -16,19 +16,20 @@ body {
 button {
   display: inline-block;
   margin: 0 auto;
-  line-height: 2 rem;
-  padding: 0 20px;
+  line-height: 1 rem;
+  padding: 10px;
   letter-spacing: 1px;
   transition: 0.2s all ease-in-out;
   outline: none;
   border: none;
   background-color: rgb(177, 137, 144);
+  color: white;
   border-radius: 0.2rem;
 }
 
-.buttonText {
-  color: white;
-  size: 30px;
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(177, 137, 144);
 }
 
 input {
@@ -58,10 +59,6 @@ input {
   padding: 10px;
 }
 
-.resetButton {
-  padding: 10px;
-}
-
 .totalMass {
   padding: 10px;
 }
@@ -85,4 +82,10 @@ input {
 a {
   text-decoration: none;
   color: rgb(177, 137, 144);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
 }

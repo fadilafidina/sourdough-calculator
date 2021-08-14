@@ -219,15 +219,26 @@ exports[`When render app should match snapshot 1`] = `
       </div>
       <br />
       <div
-        class="resetButton"
+        class="wrapper"
       >
-        <button>
-          <p
-            class="buttonText"
-          >
-            Reset data
-          </p>
-        </button>
+        <div>
+          <button>
+            <p>
+              Reset data
+            </p>
+          </button>
+        </div>
+        <div
+          class="downloadButton"
+        >
+          <button>
+            <p
+              class="buttonText"
+            >
+              Download csv
+            </p>
+          </button>
+        </div>
       </div>
     </form>
   </div>

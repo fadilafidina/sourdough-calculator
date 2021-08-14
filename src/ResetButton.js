@@ -1,12 +1,14 @@
 import React from 'react';
 
 export default function ResetButton(props) {
+    const {
+        handleSubmit
+    } = props;
+
     return (
-        <div className='resetButton'>
-            <button onClick={() => this.props.handleSubmit()}>
-                <p className="buttonText">
-                    Reset data
-                </p>
+        <div>
+            <button onClick={handleSubmit}>
+                Reset data
             </button>
         </div>
     );
