@@ -7,7 +7,7 @@ export default function ResetButton(props) {
 
     return (
         <div>
-            <button onClick={handleSubmit}>
+            <button onClick={(e) => handleSubmit(e)}>
                 Reset data
             </button>
         </div>

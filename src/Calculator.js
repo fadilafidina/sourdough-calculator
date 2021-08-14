@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Ingredient from './Ingredient'
 import ResetButton from './ResetButton';
-import IngredientData from './data/ingredientData'
+import initialIngredientData from './data/ingredientData'
 import TotalMass from './TotalMass'
 
 const ratios = {
@@ -14,14 +14,14 @@ const ratios = {
 };
 
 function Calculator() {
-    const [ingredientData, setIngredientsData] = useState(IngredientData);
-
+    const [ingredientData, setIngredientsData] = useState(initialIngredientData);
     const [hasReset, setHasReset] = useState(false);
 
     // we want this pop up to pop up when we click reset just to practice using hooks :)
     useEffect(() => {
         if (hasReset) {
             window.alert('COOL! now go get making bread! :D');
+            setIngredientsData(initialIngredientData); // resets it to the original
             setHasReset(false);
         }
     }, [hasReset]);
@@ -58,8 +58,9 @@ function Calculator() {
         setIngredientsData(updatedIngredients);
     });
 
-    const handleSubmit = (() => {
-        setIngredientsData(IngredientData); // resets it to the original
+    const handleSubmit = ((e) => {
+        e.preventDefault();
+        setIngredientsData(initialIngredientData); // resets it to the original
         setHasReset(true);
     });
 
@@ -79,7 +80,7 @@ function Calculator() {
 
     return (
         <div>
-            <form class="body">
+            <form className='body'>
                 {ingredientComponents}
 
                 <TotalMass ingredientData={ingredientData}></TotalMass>
@@ -109,12 +110,12 @@ const DownloadButton = (props) => {
         if (navigator.msSaveBlob) { // IE 10+
             navigator.msSaveBlob(blob, fileName);
         } else {
-            const link = document.createElement("a");
+            const link = document.createElement('a');
             if (link.download !== undefined) { // feature detection
                 // Browsers that support HTML5 download attribute
                 const url = URL.createObjectURL(blob);
-                link.setAttribute("href", url);
-                link.setAttribute("download", fileName);
+                link.setAttribute('href', url);
+                link.setAttribute('download', fileName);
                 link.style.visibility = 'hidden';
                 document.body.appendChild(link);
                 link.click();
