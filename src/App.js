@@ -7,7 +7,7 @@ import Calculator from './Calculator';
 function App() {
     return (
         <>
-            <Container class="container">
+            <Container className="container" aria-label='app'>
                 <Header />
                 <Calculator />
             </Container>

@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When render app should match snapshot 1`] = `
+<div
+  aria-label="app"
+  class="container container"
+>
+  <h1>
+    Sourdough calculator 
+    <span
+      aria-label="sparkle"
+      role="img"
+    >
+      ✨
+    </span>
+  </h1>
+  <div>
+    <form
+      class="body"
+    >
+      <div
+        class="pair"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="label"
+          >
+            Total Flour
+          </div>
+          <input
+            name="totalFlour"
+            placeholder="Ratio of Total Flour"
+            type="text"
+            value="100"
+          />
+           %
+        </div>
+        <div
+          class="right"
+        >
+          Amount:
+          <input
+            name="totalFlour"
+            placeholder="Total Flour"
+            type="text"
+            value=""
+          />
+           grams
+        </div>
+      </div>
+      <div
+        class="pair"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="label"
+          >
+            Bread flour
+          </div>
+          <input
+            name="breadFlour"
+            placeholder="Ratio of Bread flour"
+            type="text"
+            value="80"
+          />
+           %
+        </div>
+        <div
+          class="right"
+        >
+          Amount:
+          <input
+            name="breadFlour"
+            placeholder="Bread flour"
+            type="text"
+            value=""
+          />
+           grams
+        </div>
+      </div>
+      <div
+        class="pair"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="label"
+          >
+            WW flour
+          </div>
+          <input
+            name="wwFlour"
+            placeholder="Ratio of WW flour"
+            type="text"
+            value="20"
+          />
+           %
+        </div>
+        <div
+          class="right"
+        >
+          Amount:
+          <input
+            name="wwFlour"
+            placeholder="WW flour"
+            type="text"
+            value=""
+          />
+           grams
+        </div>
+      </div>
+      <div
+        class="pair"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="label"
+          >
+            Water
+          </div>
+          <input
+            name="water"
+            placeholder="Ratio of Water"
+            type="text"
+            value="70"
+          />
+           %
+        </div>
+        <div
+          class="right"
+        >
+          Amount:
+          <input
+            name="water"
+            placeholder="Water"
+            type="text"
+            value=""
+          />
+           grams
+        </div>
+      </div>
+      <div
+        class="pair"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="label"
+          >
+            Levain
+          </div>
+          <input
+            name="levain"
+            placeholder="Ratio of Levain"
+            type="text"
+            value="20"
+          />
+           %
+        </div>
+        <div
+          class="right"
+        >
+          Amount:
+          <input
+            name="levain"
+            placeholder="Levain"
+            type="text"
+            value=""
+          />
+           grams
+        </div>
+      </div>
+      <div
+        class="pair"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="label"
+          >
+            Salt
+          </div>
+          <input
+            name="salt"
+            placeholder="Ratio of Salt"
+            type="text"
+            value="2"
+          />
+           %
+        </div>
+        <div
+          class="right"
+        >
+          Amount:
+          <input
+            name="salt"
+            placeholder="Salt"
+            type="text"
+            value=""
+          />
+           grams
+        </div>
+      </div>
+      <div
+        class="totalMass"
+      >
+        Total mass: 
+        0
+         grams
+      </div>
+      <br />
+      <div
+        class="resetButton"
+      >
+        <button>
+          <p
+            class="buttonText"
+          >
+            Reset data
+          </p>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

@@ -65,6 +65,7 @@ function Calculator() {
 
     const ingredientComponents = ingredientData.map(i =>
         <Ingredient
+            key={i.id}
             id={i.id}
             amount={i.amount}
             label={i.label}

@@ -4,9 +4,9 @@ export default function Ingredient(props) {
     const ratioToDisplay = props.ratio === 0 ? '' : props.ratio * 100;
 
     return (
-        <div class="pair">
-            <div class="left">
-                <div class="label">
+        <div className="pair">
+            <div className="left">
+                <div className="label">
                     {props.label}
                 </div>
                 <input
@@ -16,18 +16,18 @@ export default function Ingredient(props) {
                     placeholder={`Ratio of ${props.label}`} // no place holder
                     onChange={(e) => props.handleChangeRatio(e, props.id)}>
                 </input> %
-                </div >
+            </div >
 
-            <div class="right">
+            <div className="right">
                 Amount:
-                    <input
+                <input
                     name={props.text}
                     value={props.amount === 0 ? '' : props.amount}
                     type='text'
                     placeholder={props.label}
                     onChange={(e) => props.handleChange(e, props.id)}>
                 </input> grams
-                </div>
+            </div>
         </div >
     )
 }

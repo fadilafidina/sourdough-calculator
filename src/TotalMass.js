@@ -13,7 +13,7 @@ function TotalMass(props) {
     };
 
     return (
-        <div class='totalMass'>
+        <div className='totalMass'>
             Total mass: {getTotalMass(props.ingredientData)} grams
         </div>
     );

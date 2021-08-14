@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function ResetButton(props) {
     return (
-        <div class='resetButton'>
+        <div className='resetButton'>
             <button onClick={() => this.props.handleSubmit()}>
-                <p class="buttonText">
+                <p className="buttonText">
                     Reset data
-            </p>
+                </p>
             </button>
         </div>
     );
