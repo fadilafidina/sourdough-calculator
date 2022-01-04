@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Ingredient from './Ingredient'
 import ResetButton from './ResetButton';
+import { DownloadButton } from './DownloadButton'
 import initialIngredientData from './data/ingredientData'
 import TotalMass from './TotalMass'
 
@@ -21,7 +22,6 @@ function Calculator() {
     useEffect(() => {
         if (hasReset) {
             window.alert('COOL! now go get making bread! :D');
-            setIngredientsData(initialIngredientData); // resets it to the original
             setHasReset(false);
         }
     }, [hasReset]);
@@ -60,7 +60,12 @@ function Calculator() {
 
     const handleSubmit = ((e) => {
         e.preventDefault();
-        setIngredientsData(initialIngredientData); // resets it to the original
+        const resetIngredients = ingredientData.map(i => {
+            i.amount = 0;
+            i.ratio = ratios[i.text];
+            return i;
+        });
+        setIngredientsData(resetIngredients); // resets it to the original
         setHasReset(true);
     });
 
@@ -94,54 +99,6 @@ function Calculator() {
             </form>
         </div >
     );
-}
-
-const DownloadButton = (props) => {
-    const {
-        dataToDownload
-    } = props;
-
-    const handleDownload = (e) => {
-        e.preventDefault();
-        const csvFile = convertToCsv(dataToDownload);
-        const fileName = 'Ingredients.csv';
-
-        const blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
-        if (navigator.msSaveBlob) { // IE 10+
-            navigator.msSaveBlob(blob, fileName);
-        } else {
-            const link = document.createElement('a');
-            if (link.download !== undefined) { // feature detection
-                // Browsers that support HTML5 download attribute
-                const url = URL.createObjectURL(blob);
-                link.setAttribute('href', url);
-                link.setAttribute('download', fileName);
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-        }
-    }
-
-    const convertToCsv = (items) => {
-        const replacer = (_, value) => value === null ? '' : value
-        const headers = Object.keys(items[0]);
-        const csv = [
-            headers.join(','),
-            ...items.map(item => headers.map(fieldName => JSON.stringify(item[fieldName], replacer)).join(','))
-        ].join('\n');
-        console.log(csv);
-        return csv;
-    }
-
-    return (
-        <div>
-            <button onClick={(e) => handleDownload(e)}>
-                Download csv
-            </button>
-        </div>
-    )
 }
 
 export default Calculator;

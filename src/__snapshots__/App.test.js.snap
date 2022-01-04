@@ -22,13 +22,13 @@ exports[`When render app should match snapshot 1`] = `
         class="pair"
       >
         <div
+          class="label"
+        >
+          Total Flour
+        </div>
+        <div
           class="left"
         >
-          <div
-            class="label"
-          >
-            Total Flour
-          </div>
           <input
             name="totalFlour"
             placeholder="Ratio of Total Flour"
@@ -54,13 +54,13 @@ exports[`When render app should match snapshot 1`] = `
         class="pair"
       >
         <div
+          class="label"
+        >
+          Bread flour
+        </div>
+        <div
           class="left"
         >
-          <div
-            class="label"
-          >
-            Bread flour
-          </div>
           <input
             name="breadFlour"
             placeholder="Ratio of Bread flour"
@@ -86,16 +86,16 @@ exports[`When render app should match snapshot 1`] = `
         class="pair"
       >
         <div
+          class="label"
+        >
+          Whole wheat flour
+        </div>
+        <div
           class="left"
         >
-          <div
-            class="label"
-          >
-            WW flour
-          </div>
           <input
             name="wwFlour"
-            placeholder="Ratio of WW flour"
+            placeholder="Ratio of Whole wheat flour"
             type="text"
             value="20"
           />
@@ -107,7 +107,7 @@ exports[`When render app should match snapshot 1`] = `
           Amount:
           <input
             name="wwFlour"
-            placeholder="WW flour"
+            placeholder="Whole wheat flour"
             type="text"
             value=""
           />
@@ -118,13 +118,13 @@ exports[`When render app should match snapshot 1`] = `
         class="pair"
       >
         <div
+          class="label"
+        >
+          Water
+        </div>
+        <div
           class="left"
         >
-          <div
-            class="label"
-          >
-            Water
-          </div>
           <input
             name="water"
             placeholder="Ratio of Water"
@@ -150,13 +150,13 @@ exports[`When render app should match snapshot 1`] = `
         class="pair"
       >
         <div
+          class="label"
+        >
+          Levain
+        </div>
+        <div
           class="left"
         >
-          <div
-            class="label"
-          >
-            Levain
-          </div>
           <input
             name="levain"
             placeholder="Ratio of Levain"
@@ -182,13 +182,13 @@ exports[`When render app should match snapshot 1`] = `
         class="pair"
       >
         <div
+          class="label"
+        >
+          Salt
+        </div>
+        <div
           class="left"
         >
-          <div
-            class="label"
-          >
-            Salt
-          </div>
           <input
             name="salt"
             placeholder="Ratio of Salt"

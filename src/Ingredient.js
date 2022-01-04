@@ -5,10 +5,10 @@ export default function Ingredient(props) {
 
     return (
         <div className="pair">
+            <div className="label">
+                {props.label}
+            </div>
             <div className="left">
-                <div className="label">
-                    {props.label}
-                </div>
                 <input
                     name={props.text}
                     value={ratioToDisplay}
