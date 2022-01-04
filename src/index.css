@@ -93,10 +93,10 @@ a {
 .wrapper {
   display: flex;
   flex-direction: row;
-  -webkit-justify-content: space-between;
+  /* -webkit-justify-content: space-between; */
   justify-content: space-between;
   /* justify-content: space-between; */
-  /* width: 100%; */
+  width: 30%;
 }
 
 .number {
