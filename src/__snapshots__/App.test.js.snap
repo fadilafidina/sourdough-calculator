@@ -18,6 +18,8 @@ exports[`When render app should match snapshot 1`] = `
     <form
       class="body"
     >
+      Make your own sourdough recipe using the calculator below!
+      <p />
       <div
         class="pair"
       >
@@ -213,9 +215,18 @@ exports[`When render app should match snapshot 1`] = `
       <div
         class="totalMass"
       >
-        Total mass: 
-        0
-         grams
+        <p>
+          Total mass: 
+          0
+           grams
+        </p>
+        <p>
+          Makes around 
+          0
+           
+          600
+           gram loaves.
+        </p>
       </div>
       <br />
       <div

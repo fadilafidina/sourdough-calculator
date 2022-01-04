@@ -86,6 +86,8 @@ function Calculator() {
     return (
         <div>
             <form className='body'>
+                Make your own sourdough recipe using the calculator below!
+                <p></p>
                 {ingredientComponents}
 
                 <TotalMass ingredientData={ingredientData}></TotalMass>

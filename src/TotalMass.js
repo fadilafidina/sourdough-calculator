@@ -2,6 +2,7 @@ import React from 'react';
 
 function TotalMass(props) {
 
+    const gramsInALoaf = 600;
     const getTotalMass = (ingredientData) => {
         let total = 0
         ingredientData.forEach(ingredient => {
@@ -12,9 +13,20 @@ function TotalMass(props) {
         return total
     };
 
+    const getNumberOfLoaves = (ingredientData) => {
+        const totalMass = getTotalMass(ingredientData);
+        const numberOfLoaves = Math.round(totalMass / gramsInALoaf);
+        return numberOfLoaves;
+    }
+
     return (
         <div className='totalMass'>
-            Total mass: {getTotalMass(props.ingredientData)} grams
+            <p>
+                Total mass: {getTotalMass(props.ingredientData)} grams
+            </p>
+            <p>
+                Makes around {getNumberOfLoaves(props.ingredientData)} {gramsInALoaf} gram loaves.
+            </p>
         </div>
     );
 }
