@@ -47,7 +47,7 @@ exports[`When render app should match snapshot 1`] = `
             name="totalFlour"
             placeholder="Total Flour"
             type="text"
-            value=""
+            value="400"
           />
            grams
         </div>
@@ -79,7 +79,7 @@ exports[`When render app should match snapshot 1`] = `
             name="breadFlour"
             placeholder="Bread flour"
             type="text"
-            value=""
+            value="320"
           />
            grams
         </div>
@@ -111,7 +111,7 @@ exports[`When render app should match snapshot 1`] = `
             name="wwFlour"
             placeholder="Whole wheat flour"
             type="text"
-            value=""
+            value="80"
           />
            grams
         </div>
@@ -143,7 +143,7 @@ exports[`When render app should match snapshot 1`] = `
             name="water"
             placeholder="Water"
             type="text"
-            value=""
+            value="280"
           />
            grams
         </div>
@@ -175,7 +175,7 @@ exports[`When render app should match snapshot 1`] = `
             name="levain"
             placeholder="Levain"
             type="text"
-            value=""
+            value="80"
           />
            grams
         </div>
@@ -207,7 +207,7 @@ exports[`When render app should match snapshot 1`] = `
             name="salt"
             placeholder="Salt"
             type="text"
-            value=""
+            value="8"
           />
            grams
         </div>
@@ -220,7 +220,7 @@ exports[`When render app should match snapshot 1`] = `
           <span
             class="number"
           >
-            0
+            768
           </span>
            grams
         </p>
@@ -229,7 +229,7 @@ exports[`When render app should match snapshot 1`] = `
           <span
             class="number"
           >
-            0
+            1
           </span>
            
           600
