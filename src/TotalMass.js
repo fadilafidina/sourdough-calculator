@@ -22,10 +22,10 @@ function TotalMass(props) {
     return (
         <div className='totalMass'>
             <p>
-                Total mass: <span class='number'>{getTotalMass(props.ingredientData)}</span> grams
+                Total mass: <span className='number'>{getTotalMass(props.ingredientData)}</span> grams
             </p>
             <p>
-                Makes around <span class='number'>{getNumberOfLoaves(props.ingredientData)}</span> {gramsInALoaf} gram loaves.
+                Makes around <span className='number'>{getNumberOfLoaves(props.ingredientData)}</span> {gramsInALoaf} gram loaves.
             </p>
         </div>
     );

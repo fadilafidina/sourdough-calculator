@@ -217,12 +217,20 @@ exports[`When render app should match snapshot 1`] = `
       >
         <p>
           Total mass: 
-          0
+          <span
+            class="number"
+          >
+            0
+          </span>
            grams
         </p>
         <p>
           Makes around 
-          0
+          <span
+            class="number"
+          >
+            0
+          </span>
            
           600
            gram loaves.
